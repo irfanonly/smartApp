@@ -1,0 +1,254 @@
+{
+	"id": "fb2d0f54-5419-b50f-b603-85fd3a1a63e2",
+	"name": "Power_management",
+	"description": "",
+	"order": [
+		"024a8219-5d19-a946-4849-7e5c9dc0b232",
+		"9cd99eb5-a037-89c5-9315-95d5a6b2cdca",
+		"6249cfeb-aeb5-f8af-74f2-807cfc60937b",
+		"a36e5641-bbf0-535a-9cf4-31c717569f2c",
+		"2fe8c169-f8b7-1c79-dd00-62a92b442419"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1535873656642,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "024a8219-5d19-a946-4849-7e5c9dc0b232",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n//device_name : a\n//suport_device: a\n//limit_value: a\n//created_by: a\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "device_name ",
+					"value": "a",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "suport_device",
+					"value": "a",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "limit_value",
+					"value": "a",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "created_by",
+					"value": "a",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "localhost:8080/power_management/register_device.php",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "device_name",
+					"value": "AC",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "suport_device",
+					"value": "thermal sensor",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit_value",
+					"value": "20",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "created_by",
+					"value": "senthu",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "watt",
+					"value": "10",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1537685816101,
+			"name": "http://http://localhost:8080/register_device.php",
+			"description": "",
+			"collectionId": "fb2d0f54-5419-b50f-b603-85fd3a1a63e2",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2fe8c169-f8b7-1c79-dd00-62a92b442419",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/power_management/get_result.php",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "device_id",
+					"value": "DIV1111",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1541840124122,
+			"name": "localhost:8080/power_management/get_result.php",
+			"description": "",
+			"collectionId": "fb2d0f54-5419-b50f-b603-85fd3a1a63e2",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6249cfeb-aeb5-f8af-74f2-807cfc60937b",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/power_management/get_by_month.php",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "device_id",
+					"value": "DIV1111",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1537685818869,
+			"name": "localhost:8080/power_management/get_by_month.php",
+			"description": "",
+			"collectionId": "fb2d0f54-5419-b50f-b603-85fd3a1a63e2",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "9cd99eb5-a037-89c5-9315-95d5a6b2cdca",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8080/power_management/reading.php",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "device_id",
+					"value": "DIV1111",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "is_on",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "value",
+					"value": "22",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1537685817780,
+			"name": "localhost:8080/power_management/reading.php",
+			"description": "",
+			"collectionId": "fb2d0f54-5419-b50f-b603-85fd3a1a63e2",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "a36e5641-bbf0-535a-9cf4-31c717569f2c",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:8080/power_management/get_by_month_money.php",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "device_id",
+					"value": "DIV1111",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1537685819652,
+			"name": "localhost:8080/power_management/get_by_month.php",
+			"description": "",
+			"collectionId": "fb2d0f54-5419-b50f-b603-85fd3a1a63e2",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
