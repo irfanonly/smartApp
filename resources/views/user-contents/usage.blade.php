@@ -4,6 +4,7 @@
 @foreach($css_files as $css_file)
 <link rel="stylesheet" type="text/css" id="theme" href="{{ $css_file}}"/>
 @endforeach
+
 @endsection
 @section('content')
 <style type="text/css">
@@ -263,7 +264,7 @@
 		}
 
 		function close_btn(){
-			window.location.href = base_url + '/main';
+			window.location.href = base_url + '/home';
 		}
 
 		$('.datepicker').datepicker({

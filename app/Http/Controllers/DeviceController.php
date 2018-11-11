@@ -164,6 +164,9 @@ class DeviceController extends Controller
         $device->suport_device = $request->suport_device;
 
         if ($insert) {
+
+            $deviceUser = Users::find($request->user_id);
+
             $validator=Validator::make($request->all(),[
                 "name"=>'required',
                 "suport_device"=> 'required',
@@ -184,7 +187,7 @@ class DeviceController extends Controller
                 'query' => [ 'device_name' => $device->name,
                 'suport_device' => $device->suport_device,
                 'limit_value' => $device->limit_value,
-                'created_by' => $user->email,
+                'created_by' => $deviceUser->email,
                 'watt' => ''.$device->watts ]
             ]);
              //$statusCode =  $res->getStatusCode();
@@ -282,6 +285,25 @@ class DeviceController extends Controller
         }else{
             $result["graph_data_amount"] = "";
         }
+
+        $client2 = new Client();
+        $res2 = $client2->request('POST', $host_power.'get_by_month.php', [
+            'query' => [
+                'device_id' => $device->unique_id
+            ]
+             
+        ]);
+        $ret2 = json_decode((string)$res2->getBody()) ;
+        $result["graph_curr_usage"] = $ret2;
+             if($ret2->status == '200'){
+                //$device->unique_id = $ret->id;
+                //$device->save();
+             }else{
+               // $result['response'] = FALSE;
+               // $result['data'] = $ret->message;
+               // echo json_encode($result);
+               // return;
+             }
 
         $result['data'] = \View::make('ajax.graph-device', compact('device'))->render();
         //$result["graph_data"]=$ret->result;

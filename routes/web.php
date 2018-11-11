@@ -39,6 +39,8 @@ Route::get('device/get-device-data', 'DeviceController@getDataForGraph2');
 
 Route::resource('device', 'DeviceController');
 
+Route::resource('home', 'HomeController');
+
 Route::post('calculator/calculate', 'CalculatorController@calculation');
 Route::resource('calculator', 'CalculatorController');
 

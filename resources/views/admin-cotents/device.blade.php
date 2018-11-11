@@ -4,6 +4,7 @@
     @foreach($css_files as $css_file)
         <link rel="stylesheet" type="text/css" id="theme" href="{{ $css_file}}"/>
     @endforeach
+
 @endsection
 @section('content')
     <style>
@@ -108,6 +109,7 @@
     cursor: pointer;
 }
 
+
     </style>
     <div class="contentpanel" style="overflow-x: hidden;">
 
@@ -126,7 +128,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="panel-body" >
+                <div class="panel-body bg" >
                     <input type="hidden" id="_token" name="_token" value="{{ csrf_token()}}">
                     @if(session()->get('user_group')==1)
 
@@ -556,7 +558,7 @@
                         type: 'post',
                         url: base_url + '/device/add-device',
                         cache: false,
-                        data: {name: $('#device_new').val(), '_token': $('#_token').val(), room_id: room_id,unique_id:$('#new_device_unique').val(),status:1, watts : $('#device_watts').val(), suport_device: $('#suport_device').val(), limit_value: $('#limit_value').val() },
+                        data: {name: $('#device_new').val(), '_token': $('#_token').val(), room_id: room_id,unique_id:$('#new_device_unique').val(),status:1, watts : $('#device_watts').val(), suport_device: $('#suport_device').val(), limit_value: $('#limit_value').val(), user_id: $('#app_user').val() },
                         success: function (json) {
                             var result = jQuery.parseJSON(json);
                             if (result.response) {
@@ -698,12 +700,21 @@
                     $('#ul_device_data').empty();
                     $('#ul_device_data').append(result.data);
                     //alert(result.graph_data);
+                    var curr_data = result.graph_curr_usage.history;
+                    //alert(curr_data);
+                    if(curr_data != null){
+                        $('#usedTime').text(curr_data.usage);
+                        $('#wasteTime').text(curr_data.wastage);
+                    }else{
+                        $('#usedTime').text(0);
+                        $('#wasteTime').text(0);
+                    }
                                        var data = jQuery.parseJSON(result.graph_data),data_amount = jQuery.parseJSON(result.graph_data_amount),
     config = {
       data: data,
       xkey: 'y',
       ykeys: ['a', 'b'],
-      labels: ['Total Usage(ms)', 'Total Wastage(ms)'],
+      labels: ['Total Usage(s)', 'Total Wastage(s)'],
       fillOpacity: 0.6,
       hideHover: 'auto',
       behaveLikeLine: true,
@@ -853,7 +864,7 @@ Morris.Area(config_amount);
 
 
         function close_btn(){
-            window.location.href = base_url + '/main';
+            window.location.href = base_url + '/home';
         }
     </script>
 @endsection

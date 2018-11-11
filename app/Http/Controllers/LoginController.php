@@ -30,7 +30,7 @@ class LoginController extends Controller
     {
 
         if (session()->get('LoggedIn')) {
-            return redirect('device');
+            return redirect('home');
         } else {
             return view('login');
         }
@@ -58,7 +58,7 @@ class LoginController extends Controller
             foreach ($user_data as $key => $value) {
                 session()->put($key, $value);
             }
-            return redirect($this->url->to('device'));
+            return redirect($this->url->to('home'));
         } else {
             return redirect($this->url->to('/'));
         }

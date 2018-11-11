@@ -87,7 +87,7 @@
     <div class="headerpanel">
 
         <div class="logopanel">
-            <h2><a href="index.html">SmartApp</a></h2>
+            <h2><a href="/smart-app">SmartApp</a></h2>
         </div><!-- logopanel -->
 
         <div class="headerbar">

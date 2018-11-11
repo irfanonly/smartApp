@@ -17,10 +17,26 @@
     </div>
 </div>--}}
 <div class="row">
+    <div class="col-md-6">
+        <table class="table">
+        <caption>Current Month Usage</caption>
+        <tr>
+            <td>Used Time(s)</td>
+            <td>Wasted Time(s)</td>
+        </tr>
+        <tr>
+            <td id="usedTime"></td>
+            <td id="wasteTime"></td>
+        </tr>
+    </table>
+    </div>
+    
+    </div>
+<div class="row">
     {{--<div class="col-md-1"></div>--}}
     <div class="col-md-6">
         <div class="col-sm-12 text-center">
-                                <label style="font-size: 20px;" class="label label-success">Month Usage vs Wastage time(ms)</label>
+                                <label style="font-size: 20px;" class="label label-success">Month Usage vs Wastage time(s)</label>
                             </div>
     <div class="col-md-12">
         
