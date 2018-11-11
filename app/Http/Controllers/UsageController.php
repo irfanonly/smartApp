@@ -85,7 +85,9 @@ class UsageController extends Controller
     if( empty($fromdate) && empty($todate) ){
         //echo "1";
         $usage_list = DB::select( DB::raw("
-           select devices.name, devices.id, cast(device_consumptions.start_time as date) startdate,  round(SUM( wattph)/1000) as consump from device_consumptions
+           select devices.name, devices.id, cast(device_consumptions.start_time as date) startdate
+            ,  round(SUM( wattph)) as wattshour
+           ,  round(SUM( wattph)/1000) as consump from device_consumptions
            left join devices on devices.id = device_consumptions.device_id
            left join rooms on rooms.id = devices.room_id
            WHERE rooms.home_id = '$request->home'
@@ -99,7 +101,9 @@ class UsageController extends Controller
         $fromdate = date('Y-m-d', $date);
         //echo $fromdate;
         $usage_list = DB::select( DB::raw("
-           select devices.name, devices.id, cast(device_consumptions.start_time as date) startdate,  round(SUM( wattph)/1000) as consump from device_consumptions
+           select devices.name, devices.id, cast(device_consumptions.start_time as date) startdate
+           ,  round(SUM( wattph)) as wattshour
+           ,  round(SUM( wattph)/1000) as consump from device_consumptions
            left join devices on devices.id = device_consumptions.device_id
            left join rooms on rooms.id = devices.room_id
            WHERE rooms.home_id = '$request->home' and device_consumptions.start_time >= '$fromdate'
@@ -113,7 +117,9 @@ class UsageController extends Controller
         $todate = date('Y-m-d', strtotime($todate));
         //echo $fromdate;
         $usage_list = DB::select( DB::raw("
-           select devices.name, devices.id, cast(device_consumptions.start_time as date) startdate,  round(SUM( wattph)/1000) as consump from device_consumptions
+           select devices.name, devices.id, cast(device_consumptions.start_time as date) startdate
+          ,  round(SUM( wattph)) as wattshour
+           ,  round(SUM( wattph)/1000) as consump from device_consumptions
            left join devices on devices.id = device_consumptions.device_id
            left join rooms on rooms.id = devices.room_id
            WHERE rooms.home_id = '$request->home' and device_consumptions.start_time >= '$fromdate' and device_consumptions.start_time <= '$todate'

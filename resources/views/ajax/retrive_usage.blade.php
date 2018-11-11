@@ -5,6 +5,7 @@
 			<tr>
 				<th>Date</th>
 				<th>Appliance</th>
+				<th>Watts/hour</th>
 				<th>Unit Usage</th>
 			</tr>
 			
@@ -17,6 +18,7 @@
 			<tr>
 				<td>{{$value->startdate}}</td>
 				<td>{{$value->name}}</td>
+				<td>{{$value->wattshour}}</td>
 				<td>{{$value->consump}}</td>
 				<?php 
 				$sum += $value->consump ;
@@ -25,6 +27,7 @@
 			@endforeach
 			<tfoot>
 				<tr>
+					<th></th>
 					<th></th>
 					<th align="right">Total</th>
 					<th>{{$sum}}</th>
