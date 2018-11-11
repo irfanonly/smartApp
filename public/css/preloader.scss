@@ -1,0 +1,117 @@
+@import "compass/css3";
+
+/* Try changing me! */
+$size: 150px;
+$spinner-color: #333333;
+
+$inside-size: $size * 0.8;
+$spin-size: ($size * 0.6) / 2;
+$spinner-fins: 17;
+$spinner-fin-size: $size / 30;
+$spinner-fin-opacity: 1;
+$spinner-angle: 0;
+$spinner-increment: (pi() * 2) / $spinner-fins;
+$spinner-box-shadow: '';
+$page-color: #eee;
+
+@for $i from 1 through $spinner-fins {
+  $x: cos($spinner-angle) * $spin-size;
+  $y: sin($spinner-angle) * $spin-size;
+  $angle: '';
+  $spinner-fin-opacity: $spinner-fin-opacity - (1/(($spinner-fins)+1));
+  $spinner-fin-color: 'rgba(130, 130, 130, ' + $spinner-fin-opacity + ')';
+  $add-fin: #{$x} #{$y} 1px $spinner-fin-size unquote($spinner-fin-color);
+  
+  @if $spinner-box-shadow == '' {
+    $spinner-box-shadow: $add-fin; 
+  } @else {
+    $spinner-box-shadow: join($spinner-box-shadow, $add-fin, comma);
+  }
+  
+  $spinner-angle: $spinner-angle + $spinner-increment;
+}
+
+.spinner {
+  display: inline-block;
+  position: relative;
+  width: $size;
+  height: $size;
+  border-radius: $size/2;
+  background: $spinner-color;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  
+  &::before {
+    width: $inside-size;
+    height: $inside-size;
+    border-radius: $inside-size / 2;
+    margin-left: $inside-size / -2;
+    margin-top: $inside-size / -2;
+    background: $page-color;
+  }
+    
+  &::after {
+    @extend %rotate;
+    width: 0;
+    height: 0;
+    box-shadow: $spinner-box-shadow;
+    border-radius: 50%;
+  }
+}
+
+%rotate {
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+// Presentation only
+
+html,
+body {
+  height: 100%; 
+}
+
+body {
+  background: $page-color;
+  font-family: 'Georgia', serif;
+  -webkit-font-smoothing: antialiased;
+  color: #222;
+  display: table;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: 0;
+  margin-top: -($size / 2) - 75px;
+  text-align: center;
+  width: 100%;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 white;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: $size / -2;
+  margin-top: $size / -2; 
+}

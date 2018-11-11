@@ -1,0 +1,323 @@
+/*!
+ * Quirk UI v1.0.0 (http://themepixels.com/demo/webpage/quirk)
+ * Copyright 2015 Themepixels
+ *
+ * Last compiled on Thursday, July 23rd, 2015, 10:53:11 PM
+ */
+
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin-top:20px;margin-left: 10px;margin-right:10px;margin-bottom: 10px;
+}
+body {
+    margin: 0;
+}
+
+
+img {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td,
+th {
+    padding: 0;
+}
+/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+
+thead {
+    display: table-header-group;
+}
+tr,
+img {
+    page-break-inside: avoid;
+}
+img {
+    max-width: 100% !important;
+}
+p,
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+}
+h2,
+h3 {
+    page-break-after: avoid;
+}
+
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #696c74;
+    background-color: #d8dce3;
+}
+
+img {
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #262b36;
+}
+
+h1,
+.h1 {
+    font-size: 31px;
+}
+h2,
+.h2 {
+    font-size: 25px;
+}
+h3,
+.h3 {
+    font-size: 21px;
+}
+h4,
+.h4 {
+    font-size: 15px;
+}
+h5,
+.h5 {
+    font-size: 12px;
+}
+h6,
+.h6 {
+    font-size: 11px;
+}
+p {
+    margin: 0 0 8.5px;
+}
+
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+
+.page-header {
+    padding-bottom: 7.5px;
+    margin: 34px 0 17px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+
+table {
+    background-color: #f0f1f4;
+}
+caption {
+    padding-top: 10px 15px;
+    padding-bottom: 10px 15px;
+    color: #aaacb2;
+    text-align: left;
+}
+th {
+    text-align: left;
+}
+
+
+
+
+
+
+.panel {
+    margin-bottom: 17px;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-body {
+    padding: 20px;
+}
+.panel-heading {
+    padding: 20px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: inherit;
+}
+
+.panel-footer {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #dddddd;
+    border-bottom-right-radius: 1px;
+    border-bottom-left-radius: 1px;
+}
+
+
+
+
+
+
+
+
+
+/***** PANELS *****/
+.panel {
+    border: 0;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    position: relative;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.panel-heading {
+    margin-bottom: 0;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+.panel-heading.min {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.panel-heading p {
+    margin: 7px 0 0;
+}
+.panel-heading + .panel-body {
+    padding-top: 0;
+}
+.panel-title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: #313745;
+    letter-spacing: .2px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.panel-body {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.panel-body p + p {
+    margin: 15px 0 0;
+}
+.panel-body .list-inline > li:first-child {
+    padding-left: 0;
+}
+.panel-body .list-inline > li:last-child {
+    padding-right: 0;
+}
+.panel-body.inverse {
+    background-color: #3b4354;
+    color: rgba(255, 255, 255, 0.8);
+}
+.panel-default > .panel-heading > p {
+    color: #696c74;
+}
+.panel-footer {
+    background-color: #f0f1f4;
+    border-color: transparent;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.div-middle{
+    width: 60%;
+    margin-left: 20%;
+}
+.company-heading{
+    margin-top: 20px;
+    margin-left: 0px;
+    font-size: 20px;
+}
+.company-details{
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-size: 10px;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
